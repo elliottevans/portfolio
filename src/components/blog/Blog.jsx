@@ -2,25 +2,28 @@ import React from "react";
 import { BlogBuilder } from "./BlogBuilder";
 import bloglist from "../../editable-stuff/blog";
 import { Link } from "react-router-dom";
+import { Jumbotron } from "../home/migration";
+
 const Blog = (props) => {
   return (
-    <div className="container-lg mt-5 bg-blue">
-      <h1 className="text-center">Blogs</h1>
+  <Jumbotron id="writings" className="m-0">
+      <h1 className="text-center">Writings</h1>
       {bloglist.map((value, index) => {
         return (
           <BlogCard
             key={index}
             title={value.title}
             description={value.description}
+            link={value.link}
             index={index}
           />
         );
       })}
-    </div>
+  </Jumbotron>
   );
 };
 
-const BlogCard = ({ index, title, image, description }) => {
+const BlogCard = ({ index, title, image, description, link }) => {
   return (
     <div className="m-5">
       <div className="">
@@ -32,7 +35,7 @@ const BlogCard = ({ index, title, image, description }) => {
             <div className="">
               <h1 className="">{title}</h1>
               <p className="lead">{description}</p>
-              <Link to={`${process.env.PUBLIC_URL}blog/${index}`}>
+              <Link target="_blank" to={`//${link}`}>
                 Read more...{" "}
               </Link>
             </div>
