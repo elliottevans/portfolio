@@ -65,7 +65,7 @@ const Experience = ({ experiences }) => {
 
                        <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: 'rgb(0,0,128)', color: '#fff' }}
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(0,0,128)' }}
                         date="2018-2021"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -73,7 +73,7 @@ const Experience = ({ experiences }) => {
                       >
                         <h3 className="vertical-timeline-element-title"><b>Civis Analytics</b>
                         </h3>
-                        <h5 className="vertical-timeline-element-subtitle">Senior Data Scientist ('18-'20), Staff Data Scientist ('20-'21)</h5>
+                        <h5 className="vertical-timeline-element-subtitle">Senior ('18-'20) and Staff ('20-'21) Data Scientist</h5>
                         <p>
                          Used machine learning to help democrats win elections.
                         </p>
@@ -97,7 +97,7 @@ const Experience = ({ experiences }) => {
 
                       <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: 'rgb(0,0,128)', color: '#fff' }}
+                        contentStyle={{ background: 'rgb(12,38,73)', color: 'rgb(288,225,28)' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(0,0,128)' }}
                         date="2016-2018"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
@@ -128,7 +128,7 @@ const Experience = ({ experiences }) => {
 
                        <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: 'rgb(0,0,128)', color: '#fff' }}
+                        contentStyle={{ background: 'rgb(73,44,127)', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(0,0,128)' }}
                         date="2011-2015"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}

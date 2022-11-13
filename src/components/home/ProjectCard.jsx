@@ -9,6 +9,7 @@ const ProjectCard = ({ value }) => {
     name,
     description,
     svn_url,
+    homepage,
     stargazers_count,
     languages_url,
     pushed_at,
@@ -19,7 +20,7 @@ const ProjectCard = ({ value }) => {
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
-          {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
+          {svn_url ? <CardButtons svn_url={svn_url} homepage={homepage} /> : <Skeleton count={3} />}
           <hr />
           {languages_url ? (
             <Language languages_url={languages_url} repo_url={svn_url} />
@@ -37,17 +38,22 @@ const ProjectCard = ({ value }) => {
   );
 };
 
-const CardButtons = ({ svn_url }) => {
+const CardButtons = ({ svn_url, homepage }) => {
   return (
     <div className="d-grid gap-2 d-md-block">
+      {homepage ?
+      <a href={homepage} target=" _blank" className="btn btn-outline-secondary mx-2">
+        <i className="fab fa-github" /> Homepage
+      </a>
+      : <Skeleton count={1} />}
+      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
+        <i className="fab fa-github" /> Repo
+      </a>
       <a
         href={`${svn_url}/archive/master.zip`}
         className="btn btn-outline-secondary mx-2"
       >
         <i className="fab fa-github" /> Clone Project
-      </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
-        <i className="fab fa-github" /> Repo
       </a>
     </div>
   );

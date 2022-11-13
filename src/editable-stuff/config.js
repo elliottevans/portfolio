@@ -55,11 +55,11 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-//  imageLink: require("../editable-stuff/hashirshoaeb.png"),
+  // imageLink: require("../editable-stuff/elliottevans.jpeg"),
   imageLink: "",
   imageSize: 375,
   message:
-    "Principal data scientist at Capital One. Michigan and Northwestern grad. Lover of anything math, statistics, baseball, and data.",
+    "I'm a principal data scientist at Capital One. Michigan and Northwestern grad. Lover of anything math, statistics, baseball, and data. Go Blue and go 'Cats.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -69,11 +69,11 @@ const about = {
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
 const repos = {
-  show: false,
-  heading: "Recent Projects",
-  gitHubUsername: "hashirshoaeb", //i.e."johnDoe12Gh"
-  reposLength: 4,
-  specificRepos: [],
+  show: true,
+  heading: "Projects",
+  gitHubUsername: "elliottevans", //i.e."johnDoe12Gh"
+  reposLength: 0,
+  specificRepos: ["election-forecasts", "mlb-hof-prediction"],
 };
 
 // Leadership SECTION
@@ -131,7 +131,7 @@ const getInTouch = {
   show: true,
   heading: "Get In Touch",
   message:
-    "If you have any questions, or if you just want to say hi, feel free to email me at",
+    "Have questions? Just saying hi? Feel free to email me at",
   email: "evanselliott1@gmail.com",
 };
 
@@ -154,7 +154,7 @@ const experiences = {
 
 // Blog SECTION
  const blog = {
-   show: false,
+   show: true,
  };
 
 export { navBar, mainBody, about, experiences, repos, skills, blog, leadership, getInTouch };
