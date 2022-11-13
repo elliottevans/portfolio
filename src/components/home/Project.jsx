@@ -9,6 +9,7 @@ const dummyProject = {
   name: null,
   description: null,
   svn_url: null,
+  homepage: null,
   stargazers_count: null,
   languages_url: null,
   pushed_at: null,
@@ -55,27 +56,27 @@ const Project = ({ heading, username, length, specfic }) => {
   }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className="bg-light m-0">
-      <Container className="">
-        <h2 className="display-4 pb-5 text-center">{heading}</h2>
-        <Row>
-          {projectsArray.length
-            ? projectsArray.map((project, index) => (
-              <ProjectCard
-                key={`project-card-${index}`}
-                id={`project-card-${index}`}
-                value={project}
-              />
-            ))
-            : dummyProjectsArr.map((project, index) => (
-              <ProjectCard
-                key={`dummy-${index}`}
-                id={`dummy-${index}`}
-                value={project}
-              />
-            ))}
-        </Row>
-      </Container>
+    <Jumbotron fluid id="projects" className="m-0">
+          <Container className="">
+            <h2 className="display-4 pb-5 text-center">{heading}</h2>
+            <Row>
+              {projectsArray.length
+                ? projectsArray.map((project, index) => (
+                  <ProjectCard
+                    key={`project-card-${index}`}
+                    id={`project-card-${index}`}
+                    value={project}
+                  />
+                ))
+                : dummyProjectsArr.map((project, index) => (
+                  <ProjectCard
+                    key={`dummy-${index}`}
+                    id={`dummy-${index}`}
+                    value={project}
+                  />
+                ))}
+            </Row>
+          </Container>
     </Jumbotron>
   );
 };

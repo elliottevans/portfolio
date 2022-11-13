@@ -6,7 +6,7 @@ import { Jumbotron } from "../home/migration";
 
 const Blog = (props) => {
   return (
-  <Jumbotron id="writings" className="m-0">
+  <Jumbotron id="writings" className="bg-light m-0">
       <h1 className="text-center">Writings</h1>
       {bloglist.map((value, index) => {
         return (
@@ -31,7 +31,7 @@ const BlogCard = ({ index, title, image, description, link }) => {
           <div className="col-4 col-lg-12">
             {/* <img src={image} className="card-img" alt="..." /> */}
           </div>
-          <div className="col-8 col-lg-12">
+          <div className="">
             <div className="">
               <h1 className="">{title}</h1>
               <p className="lead">{description}</p>

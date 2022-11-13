@@ -73,7 +73,7 @@ const Experience = ({ experiences }) => {
                       >
                         <h3 className="vertical-timeline-element-title"><b>Civis Analytics</b>
                         </h3>
-                        <h5 className="vertical-timeline-element-subtitle">Senior Data Scientist ('18-'20), Staff Data Scientist ('20-'21)</h5>
+                        <h5 className="vertical-timeline-element-subtitle">Senior ('18-'20) and Staff ('20-'21) Data Scientist</h5>
                         <p>
                          Used machine learning to help democrats win elections.
                         </p>

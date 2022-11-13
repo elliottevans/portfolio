@@ -69,11 +69,11 @@ const about = {
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
 const repos = {
-  show: false,
-  heading: "Recent Projects",
+  show: true,
+  heading: "Projects",
   gitHubUsername: "elliottevans", //i.e."johnDoe12Gh"
-  reposLength: 4,
-  specificRepos: [],
+  reposLength: 0,
+  specificRepos: ["election-forecasts", "mlb-hof-prediction"],
 };
 
 // Leadership SECTION
