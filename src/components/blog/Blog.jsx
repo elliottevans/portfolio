@@ -33,7 +33,7 @@ const BlogCard = ({ index, title, image, description, link }) => {
           </div>
           <div className="">
             <div className="">
-              <h1 className="">{title}</h1>
+              <h2 className="">{title}</h2>
               <p className="lead">{description}</p>
               <Link target="_blank" to={`//${link}`}>
                 Read more...{" "}
