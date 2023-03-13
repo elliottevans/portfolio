@@ -55,7 +55,7 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  // imageLink: require("../editable-stuff/elliottevans.jpeg"),
+  //imageLink: require("../editable-stuff/elliottevans3.jpeg"),
   imageLink: "",
   imageSize: 375,
   message:
