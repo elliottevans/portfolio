@@ -113,7 +113,7 @@ const getInTouch = {
 
 const experiences = {
   show: true,
-  heading: "Experiences",
+  heading: "Career Timeline",
   data: [
     {
       role: 'Software Engineer',// Here Add Company Name

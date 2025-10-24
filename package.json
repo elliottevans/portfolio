@@ -1,12 +1,21 @@
 {
   "name": "developers-portfolio",
+  "version": "2.0.0",
   "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
   "homepage": "https://elliottevans.github.io",
-  "version": "2.0.0",
   "overrides": {
     "schema-utils": "^3.3.0",
     "ajv": "^8.12.0",
     "ajv-keywords": "^5.1.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "npm run build && rm -rf docs && mkdir -p docs && cp -R build/* docs/ && git add docs && git commit -m \"Deploy to /docs\" || true && git push",
+    "start": "DISABLE_ESLINT_PLUGIN=true NODE_ENV=development NODE_OPTIONS=--require=./shim/preload.js craco start",
+    "build": "NODE_OPTIONS=--require=./shim/preload.js craco build",
+    "test": "NODE_OPTIONS=--require=./shim/preload.js craco test",
+    "eject": "react-scripts eject",
+    "custom-deploy": "node pages.js"
   },
   "dependencies": {
     "@swc/helpers": "^0.5.2",
@@ -32,14 +41,14 @@
     "schema-utils": "^3.3.0",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "DISABLE_ESLINT_PLUGIN=true NODE_ENV=development NODE_OPTIONS=--require=./shim/preload.js craco start",
-    "build": "NODE_OPTIONS=--require=./shim/preload.js craco build",
-    "test": "NODE_OPTIONS=--require=./shim/preload.js craco test",
-    "eject": "react-scripts eject",
-    "custom-deploy": "node pages.js"
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@swc/core": "^1.7.26",
+    "swc-loader": "^0.2.6",
+    "@types/node": "^24.9.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=18.14 <19",
@@ -51,14 +60,5 @@
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
     "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
-  },
-  "devDependencies": {
-    "@craco/craco": "^7.1.0",
-    "@swc/core": "^1.7.26",
-    "swc-loader": "^0.2.6",
-    "@types/node": "^24.9.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "typescript": "^5.9.3"
   }
 }
