@@ -1,4 +1,4 @@
-# 🌐 Developer Portfolio
+# 🌐 Developer Portfolio 
 
 A personal static portfolio website built with **React**, **Bootstrap**, and **Sass**, designed to showcase projects, experience, and contact information.  
 This version includes compatibility fixes for Node 18+ and Ajv schema validation (via a shim layer).
