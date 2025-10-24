@@ -11,7 +11,8 @@ View your deployed site here:
 
 To deploy updates manually:
 ```bash
-npm run deploy
+npm run build
+npm run custom-deploy
 ```
 That command builds the app and pushes it to the `gh-pages` branch for GitHub Pages hosting.
 
