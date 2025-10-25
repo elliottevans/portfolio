@@ -7,7 +7,7 @@ import { Jumbotron } from "../home/migration";
 const Blog = (props) => {
   return (
   <Jumbotron id="writings" className="bg-light m-0">
-      <h1 className="text-center">Writings</h1>
+      <h1 className="text-center display-4">Publications & Writing</h1>
       {bloglist.map((value, index) => {
         return (
           <BlogCard
@@ -35,16 +35,20 @@ const BlogCard = ({ index, title, image, description, link }) => {
             <div className="">
               <h2 className="">{title}</h2>
               <p className="lead">{description}</p>
-              <Link target="_blank" to={`//${link}`}>
-                Read more...{" "}
-              </Link>
+              <a
+                  href={link.startsWith("http") ? link : `https://${link}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
+                Read more...
+              </a>
             </div>
           </div>
         </div>
-        <hr />
+        <hr/>
       </div>
     </div>
   );
 };
 
-export { Blog, BlogBuilder };
+export {Blog, BlogBuilder};

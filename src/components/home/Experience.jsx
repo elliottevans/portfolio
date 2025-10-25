@@ -83,68 +83,159 @@ const Experience = ({ experiences }) => {
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               position="left"
-              // Capital One gradient (navy → blue). No boxShadow here so your hover CSS still works.
-              contentStyle={{
-                background: "linear-gradient(135deg, #004879 0%, #0072C6 100%)",
-                color: "#fff",
-                borderRadius: "18px",
-                border: "1px solid rgba(255,255,255,0.10)"
-              }}
-              // Arrow uses the first gradient color so it blends nicely
-              contentArrowStyle={{ borderRight: "7px solid #004879" }}
+              contentStyle={makeCardStyle("#014A77")}
+              contentArrowStyle={makeArrowStyle("#014A77")}
               date="2021–Present"
-              // Gradient icon to match the card
-              iconStyle={{
-                background: "linear-gradient(135deg, #004879, #00AEEF)",
-                color: "#fff"
-              }}
-              icon={<WorkIcon />}
-              onMouseEnter={liftIn}
-              onMouseLeave={liftOut}
-            >
-              <h3 className="vertical-timeline-element-title">
-                <b>Capital One</b>
-              </h3>
-              <h5 className="vertical-timeline-element-subtitle">Data Science Manager (2025–CURRENT)</h5>
-              <h5 className="vertical-timeline-element-subtitle">Principal Data Scientist (2021–2025)</h5>
-              <p>Developing models to stop fraudsters.</p>
-            </VerticalTimelineElement>
-
-            {/* 2) Civis — RIGHT */}
-            <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                position="right"
-                contentStyle={makeCardStyle(COLORS.work)}
-              contentArrowStyle={makeArrowStyle(COLORS.workArrow)}
-              date="2018-2021"
               iconStyle={iconStyleWork}
               icon={<WorkIcon />}
               onMouseEnter={liftIn}
               onMouseLeave={liftOut}
             >
-              <h3 className="vertical-timeline-element-title">
-                <b>Civis Analytics</b>
-              </h3>
-              <h5 className="vertical-timeline-element-subtitle">Staff Data Scientist (2020–2021)</h5>
-              <h5 className="vertical-timeline-element-subtitle">Senior Data Scientist (2018–2020)</h5>
+              <img
+                src={require("../../assets/img/capitalone_logo_clean.png")}
+                alt="Capital One"
+                style={{
+                  display: "block",
+                  width: "190px",       // your preferred normal size
+                  maxWidth: "100%",     // prevents overflow on smaller layouts
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain", // ensures it never warps
+                  boxSizing: "border-box"
+                }}
+              />
+
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>Data Science Manager</span>
+                <span>2025–Present</span>
+              </h5>
+
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>Principal Data Scientist</span>
+                <span>2021–2025</span>
+              </h5>
+
+              <p>Developing models to stop fraudsters.</p>
+            </VerticalTimelineElement>
+
+            {/* Georgia Tech — LEFT (education styling) */}
+              <VerticalTimelineElement
+                  className="vertical-timeline-element--education"
+                  position="right"
+                  contentStyle={makeCardStyle("#B3A369")}
+                  contentArrowStyle={makeArrowStyle("#B3A369")}
+                  date="2024–Present"
+                  iconStyle={iconStyleEdu}
+                  icon={<SchoolIcon/>}
+                  onMouseEnter={liftIn}
+                  onMouseLeave={liftOut}
+              >
+                  <img
+                      src={require("../../assets/img/georgia_tech_logo_clean.png")}  // ← save your cleaned file here
+                      alt="Georgia Institute of Technology"
+                      style={{
+                          display: "block",
+                          width: "300px",        // consistent scale across your education cards
+                          maxWidth: "100%",      // prevents overflow on narrow screens
+                          height: "auto",
+                          marginBottom: "16px",
+                          marginTop: "-4px",
+                          objectFit: "contain",
+                          boxSizing: "border-box"
+                      }}
+                  />
+
+                  <h5 className="vertical-timeline-element-subtitle">
+                      M.S. in Computer Science
+                  </h5>
+                  <h6 className="vertical-timeline-element-subtitle">
+                      Artificial Intelligence Specialization
+                  </h6>
+
+                  <p>Online Master of Science in Computer Science (OMSCS) - Current graduate work in machine learning, AI systems, and computational intelligence.</p>
+              </VerticalTimelineElement>
+
+              {/* 2) Civis — RIGHT */}
+              <VerticalTimelineElement
+                  className="vertical-timeline-element--work"
+              position="left"
+              contentStyle={makeCardStyle("#0F2F48")}
+              contentArrowStyle={makeArrowStyle("#0F2F48")}
+              date="2018–2021"
+              iconStyle={iconStyleWork}
+              icon={<WorkIcon />}
+              onMouseEnter={liftIn}
+              onMouseLeave={liftOut}
+            >
+              <img
+                src={require("../../assets/img/civis_logo_clean.png")}
+                alt="Civis Analytics"
+                style={{
+                  display: "block",
+                  width: "190px",       // your intended normal size
+                  maxWidth: "100%",     // prevents overflow on narrower cards
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain", // prevents distortion while scaling
+                  boxSizing: "border-box"
+                }}
+              />
+
+              {/* Roles with right-aligned dates */}
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>Staff Data Scientist</span>
+                <span>2020–2021</span>
+              </h5>
+
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>Senior Data Scientist</span>
+                <span>2018–2020</span>
+              </h5>
+
               <p>Used machine learning to help democrats win elections.</p>
             </VerticalTimelineElement>
 
             {/* 3) US Census — LEFT */}
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              position="left"
-              contentStyle={makeCardStyle(COLORS.work)}
-              contentArrowStyle={makeArrowStyle(COLORS.workArrow)}
+              position="right"
+              contentStyle={makeCardStyle("#066464")}
+              contentArrowStyle={makeArrowStyle("#066464")}
               date="2017"
               iconStyle={iconStyleWork}
               icon={<WorkIcon />}
               onMouseEnter={liftIn}
               onMouseLeave={liftOut}
             >
-              <h3 className="vertical-timeline-element-title">
-                <b>US Census Bureau</b>
-              </h3>
+              <img
+                src={require("../../assets/img/census_logo_clean.png")}
+                alt="U.S. Census Bureau"
+                style={{
+                  display: "block",
+                  width: "150px",       // your intended default width
+                  maxWidth: "100%",     // prevents overflow when card narrows
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain", // keeps proportions perfect
+                  boxSizing: "border-box"
+                }}
+              />
+
               <h5 className="vertical-timeline-element-subtitle">
                 Survey Statistician Intern
               </h5>
@@ -157,63 +248,182 @@ const Experience = ({ experiences }) => {
             {/* 4) Michigan — RIGHT (education styling) */}
             <VerticalTimelineElement
               className="vertical-timeline-element--education"
-              position="right"
-              contentStyle={makeCardStyle(COLORS.eduBg, COLORS.eduText)}
-              contentArrowStyle={makeArrowStyle(COLORS.eduBg)}
-              date="2016-2018"
+              position="left"
+              contentStyle={makeCardStyle("#0E284B")}
+              contentArrowStyle={makeArrowStyle("#0E284B")}
+              date="2016–2018"
               iconStyle={iconStyleEdu}
-              icon={<SchoolIcon />}
+              icon={<SchoolIcon/>}
               onMouseEnter={liftIn}
               onMouseLeave={liftOut}
             >
-              <h3 className="vertical-timeline-element-title">
-                <b>University of Michigan - Ann Arbor</b>
-              </h3>
-              <p>MS: Applied Statistics</p>
+              <img
+                src={require("../../assets/img/michigan_logo_clean.png")}
+                alt="University of Michigan"
+                style={{
+                  display: "block",
+                  width: "475px",              // your preferred “normal” width
+                  maxWidth: "100%",            // prevents overflow on small cards
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain",        // ensures no distortion
+                  boxSizing: "border-box"
+                }}
+              />
+
+              <h5 className="vertical-timeline-element-subtitle">
+                M.S. in Applied Statistics
+              </h5>
+
+              <p>Focused on Bayesian modeling, statistical inference, and predictive analytics.</p>
             </VerticalTimelineElement>
 
             {/* 5) OptionsHouse — LEFT */}
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              position="left"
-              contentStyle={makeCardStyle(COLORS.work)}
-              contentArrowStyle={makeArrowStyle(COLORS.workArrow)}
-              date="2015–2016"
+              position="right"   // or "left" depending on your timeline flow
+              contentStyle={makeCardStyle("#003D2E")}
+              contentArrowStyle={makeArrowStyle("#003D2E")}
+              date="2016"
               iconStyle={iconStyleWork}
               icon={<WorkIcon />}
               onMouseEnter={liftIn}
               onMouseLeave={liftOut}
             >
-              <h3 className="vertical-timeline-element-title">
-                <b>OptionsHouse</b>
-              </h3>
+              <img
+                src={require("../../assets/img/optionshouse_logo_clean.png")}
+                alt="OptionsHouse"
+                style={{
+                  display: "block",
+                  width: "275px",       // your intended default width
+                  maxWidth: "100%",     // prevents overflow on narrower cards
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain", // keeps proportions perfect
+                  boxSizing: "border-box"
+                }}
+              />
+
               <h5 className="vertical-timeline-element-subtitle">
-                Jr Business Intelligence Analyst
+                Junior Business Intelligence Analyst
               </h5>
               <p>Modeled user trading behavior and customer segmentation.</p>
             </VerticalTimelineElement>
 
-            {/* 6) Northwestern — RIGHT (education styling) */}
+            {/* numberFire — RIGHT */}
             <VerticalTimelineElement
-              className="vertical-timeline-element--education"
-              position="right"
-              contentStyle={makeCardStyle("rgb(73,44,127)")}
-              contentArrowStyle={makeArrowStyle("rgb(73,44,127)")}
-              date="2011-2015"
-              iconStyle={iconStyleEdu}
-              icon={<SchoolIcon />}
+              className="vertical-timeline-element--work"
+              position="left"
+              contentStyle={makeCardStyle("#131313")}
+              contentArrowStyle={makeArrowStyle("#131313")}
+              date="Jun 2014 – Sep 2014"
+              iconStyle={iconStyleWork}
+              icon={<WorkIcon />}
               onMouseEnter={liftIn}
               onMouseLeave={liftOut}
             >
-              <h3 className="vertical-timeline-element-title">
-                <b>Northwestern University</b>
-              </h3>
-              <p>BA: Mathematics | BA: Statistics | Minor: Computer Science</p>
+              <img
+                src={require("../../assets/img/numberfire_logo_clean.png")}  // save your logo here
+                alt="numberFire"
+                style={{
+                  display: "block",
+                  width: "250px",         // wide logo; this feels balanced
+                  maxWidth: "100%",       // prevents overflow on narrow cards
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain",
+                  boxSizing: "border-box"
+                }}
+              />
+
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>MLB Contributor</span>
+              </h5>
+
+              <p>Provided data-centric baseball content for the website.</p>
+            </VerticalTimelineElement>
+
+            {/* 0) STATS Perform — LEFT */}
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              position="right"
+              contentStyle={makeCardStyle("#000000")} // black card to match logo
+              contentArrowStyle={makeArrowStyle("#000000")}
+              date="Jun 2013 – Sep 2013"
+              iconStyle={iconStyleWork}
+              icon={<WorkIcon />}
+              onMouseEnter={liftIn}
+              onMouseLeave={liftOut}
+            >
+              <img
+                src={require("../../assets/img/stats_logo_clean.png")}
+                alt="STATS Perform"
+                style={{
+                  display: "block",
+                  width: "200px",      // visually matches your other logos
+                  maxWidth: "100%",    // prevents overflow
+                  height: "auto",
+                  marginBottom: "16px",
+                  marginTop: "-4px",
+                  objectFit: "contain",
+                  boxSizing: "border-box"
+                }}
+              />
+
+              <h5
+                className="vertical-timeline-element-subtitle"
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
+              >
+                <span>Operations Statistician</span>
+              </h5>
+
+              <p>Provided baseball pitch-type analysis for MLB and Japanese games.</p>
+            </VerticalTimelineElement>
+
+            {/* 6) Northwestern — RIGHT (education styling) */}
+            <VerticalTimelineElement
+                className="vertical-timeline-element--education"
+                position="left"
+                contentStyle={makeCardStyle("#4E2686")}
+                contentArrowStyle={makeArrowStyle("#4E2686")}
+                date="2011–2015"
+                iconStyle={iconStyleEdu}
+                icon={<SchoolIcon/>}
+                onMouseEnter={liftIn}
+                onMouseLeave={liftOut}
+            >
+              <img
+                  src={require("../../assets/img/northwestern_logo_clean.png")}
+                  alt="Northwestern University"
+                  style={{
+                    display: "block",
+                    width: "300px",      // your intended default size
+                    maxWidth: "100%",    // prevents overflow in narrow layouts
+                    height: "auto",
+                    marginBottom: "16px",
+                    marginTop: "-4px",
+                    objectFit: "contain", // keeps proportions clean
+                    boxSizing: "border-box"
+                  }}
+              />
+
+              <h5 className="vertical-timeline-element-subtitle">B.A.: Mathematics & Statistics
+              </h5>
+              <h6 className="vertical-timeline-element-subtitle">Minor: Computer
+                Science
+              </h6>
+              <p>Studied the mathematical foundations that underpin modern statistical modeling and data analysis.</p>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
-              iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
-              icon={<StarIcon />}
+                iconStyle={{background: "rgb(16, 204, 82)", color: "#fff"}}
+                icon={<StarIcon />}
             />
           </VerticalTimeline>
         </Container>
